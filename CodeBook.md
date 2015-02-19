@@ -17,28 +17,31 @@ This CodeBook will describe the variables, the data, and any transformations or 
 3. **Features** - The variables used on the feature vector, such as tBodyAccMeanX, tBodyAccMeanY, tBodyAccMeanZ.
 
 ### Transformation and Work
-The R script called `“run_analysis.R”` will provide the following function
+The R script called `"run_analysis.R"` will provide the following function
 
 1. **Merges the training and the test sets to create one data set.**
   * Use `read.table()` function to read both train and test data.
-    * `”train/X_train.txt”`, `"test/X_test.txt"` (Store in `xDf`)
-    * `”train/subject_train.txt”`, `"test/subject_test.txt"` (Store in `subjDf`)
-    * `”train/y_train.txt”`, `"test/y_test.txt"` (Store in `yDf`)
   * Use `rbind()` function to merge the data.
+    * `"train/X_train.txt"`, `"test/X_test.txt"` (Store in `xDf`)
+    * `"train/subject_train.txt"`, `"test/subject_test.txt"` (Store in `subjDf`)
+    * `"train/y_train.txt"`, `"test/y_test.txt"` (Store in `yDf`)
 2. **Extracts only the measurements on the mean and standard deviation for each measurement.**
   * Read feature data from `"features.txt”`. (Store in `measureDf`)
   * Use `grep()` function to extract only measurements that related to mean and standard deviation.
-  * Use `gsub()` function to clean the column names and assign the column names to `xDf`.
+  * Assign the column names to `xDf`.
+  * Use `gsub()` function to clean the column names of `xDf`.
 3. **Uses descriptive activity names to name the activities in the data set.**
   * Read activity labels data from `“activity_labels.txt”` (Store in `activDf`)
   * Use `gsub()` function to clean the activity labels in `activDf`.
   * Map activity number in `yDf` with activity labels in `activDf`.
+  * Assign a column name `"activity"` to `yDf`
 4. **Appropriately labels the data set with descriptive variable names.**
+  * Assign a column name `"subject"` to `subjDf`
   * Use `cbind()` function to combine three data frames to one data frame called `tidyData`
-  * Use `write.table()` function to export the tidy data set called `“1-tidyData.txt”`
+  * Use `write.table()` function to export the tidy data set called `"1-tidyData.txt"`
 5. **Creates a second, independent tidy data set with the average of each variable for each activity and each subject.**
   * Use `tidyData` to calculate the mean of each variable for each activity and each subject. (Store in `avgTidyData`)
-  * Use `write.table()` to export the average tidy data set called `“2-avgTidydata.txt”`
+  * Use `write.table()` to export the average tidy data set called `"2-avgTidydata.txt"`
 
 ### Output Files
 * **1-tidyData.txt** - The tidy data set of UCI HAR Dataset.
