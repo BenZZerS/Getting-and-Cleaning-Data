@@ -1,11 +1,11 @@
-##CodeBook
+# CodeBook
 This CodeBook will describe the variables, the data, and any transformations or work that I performed to clean up the data.
 
-###Data and Description
+### Data and Description
 * Data for the project: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 * Full description: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-###Variables
+### Variables
 1. **Subject** - The subject who performed the activity for each window sample. Its range is from 1 to 30. 
 2. **Activity** - Description of the activity. The following are the 6 types of the activity.
   * WALKING
@@ -16,7 +16,7 @@ This CodeBook will describe the variables, the data, and any transformations or 
   * LAYING
 3. **Features** - The variables used on the feature vector, such as tBodyAccMeanX, tBodyAccMeanY, tBodyAccMeanZ.
 
-###Transformation and Work
+### Transformation and Work
 The R script called `“run_analysis.R”` will provide the following function
 
 1. **Merges the training and the test sets to create one data set.**
@@ -40,7 +40,7 @@ The R script called `“run_analysis.R”` will provide the following function
   * Use `tidyData` to calculate the mean of each variable for each activity and each subject. (Store in `avgTidyData`)
   * Use `write.table()` to export the average tidy data set called `“2-avgTidydata.txt”`
 
-###Output Files
+### Output Files
 * **1-tidyData.txt** - The tidy data set of UCI HAR Dataset.
 * **2-avgTidydata.txt** - The independent tidy data set with the average of each variable for each activity and each subject.
 
