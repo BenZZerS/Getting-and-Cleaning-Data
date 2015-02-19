@@ -19,17 +19,17 @@ This CodeBook will describe the variables, the data, and any transformations or 
 ###Transformation and Work
 The R script called `“run_analysis.R”` will provide the following function
 
-1. Merges the training and the test sets to create one data set.
+1. **Merges the training and the test sets to create one data set.**
   * Use `read.table()` function to read both train and test data.
     * `”train/X_train.txt”`, `"test/X_test.txt"` (Store in `xDf`)
     * `”train/subject_train.txt”`, `"test/subject_test.txt"` (Store in `subjDf`)
-    * `”train/y_train.txt”`, "test/y_test.txt"` (Store in `yDf`)
+    * `”train/y_train.txt”`, `"test/y_test.txt"` (Store in `yDf`)
   * Use `rbind()` function to merge the data.
-2. Extracts only the measurements on the mean and standard deviation for each measurement.
+2. **Extracts only the measurements on the mean and standard deviation for each measurement.**
   * Read feature data from `"features.txt”`. (Store in `measureDf`)
   * Use `grep()` function to extract only measurements that related to mean and standard deviation.
   * Use `gsub()` function to clean the column names and assign the column names to `xDf`.
-3. Uses descriptive activity names to name the activities in the data set.
+**3. Uses descriptive activity names to name the activities in the data set.**
   * Read activity labels data from `“activity_labels.txt”` (Store in `activDf`)
   * Use `gsub()` function to clean the activity labels in `activDf`.
   * Map activity number in `yDf` with activity labels in `activDf`.
@@ -41,8 +41,8 @@ The R script called `“run_analysis.R”` will provide the following function
   * Use `write.table()` to export the average tidy data set called `“2-avgTidydata.txt”`
 
 ###Output Files
-* 1-tidyData.txt
-* 2-avgTidydata.txt
+* 1-tidyData.txt - The tidy data set of UCI HAR Dataset.
+* 2-avgTidydata.txt - The independent tidy data set with the average of each variable for each activity and each subject.
 
 
 
