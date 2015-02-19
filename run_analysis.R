@@ -36,7 +36,7 @@ names(yDf) <- "activity"
 #Step 4: Appropriately labels the data set with descriptive variable names.
 names(subjDf) <- "subject"
 tidyData <- cbind(subjDf, yDf, xDf)
-write.table(tidyData, "1-tidyData.txt")
+write.table(tidyData, "1-tidyData.txt" ,row.names=FALSE)
 
 #Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 subjUnique <- sort(unique(subjDf[, 1]))
@@ -58,4 +58,4 @@ for(i in 1:subjLen){
     }
 }
 remove(i, j, n)
-write.table(avgTidyData, "2-avgTidydata.txt")
+write.table(avgTidyData, "2-avgTidydata.txt" ,row.names=FALSE)
