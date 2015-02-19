@@ -29,20 +29,20 @@ The R script called `“run_analysis.R”` will provide the following function
   * Read feature data from `"features.txt”`. (Store in `measureDf`)
   * Use `grep()` function to extract only measurements that related to mean and standard deviation.
   * Use `gsub()` function to clean the column names and assign the column names to `xDf`.
-**3. Uses descriptive activity names to name the activities in the data set.**
+3. **Uses descriptive activity names to name the activities in the data set.**
   * Read activity labels data from `“activity_labels.txt”` (Store in `activDf`)
   * Use `gsub()` function to clean the activity labels in `activDf`.
   * Map activity number in `yDf` with activity labels in `activDf`.
-4. Appropriately labels the data set with descriptive variable names.
+4. **Appropriately labels the data set with descriptive variable names.**
   * Use `cbind()` function to combine three data frames to one data frame called `tidyData`
   * Use `write.table()` function to export the tidy data set called `“1-tidyData.txt”`
-5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+5. **Creates a second, independent tidy data set with the average of each variable for each activity and each subject.**
   * Use `tidyData` to calculate the mean of each variable for each activity and each subject. (Store in `avgTidyData`)
   * Use `write.table()` to export the average tidy data set called `“2-avgTidydata.txt”`
 
 ###Output Files
-* 1-tidyData.txt - The tidy data set of UCI HAR Dataset.
-* 2-avgTidydata.txt - The independent tidy data set with the average of each variable for each activity and each subject.
+* **1-tidyData.txt** - The tidy data set of UCI HAR Dataset.
+* **2-avgTidydata.txt** - The independent tidy data set with the average of each variable for each activity and each subject.
 
 
 
